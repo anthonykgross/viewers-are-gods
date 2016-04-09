@@ -1,0 +1,7 @@
+name: Anthonykgross
+main: fr.anthonykgross.Main
+version: 1.0
+
+commands:
+  hello:
+    description: Our first command!

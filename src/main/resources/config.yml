@@ -1,0 +1,6 @@
+irc:
+  channel: "#anthonykgross"
+  port: 6667
+  url: "irc.twitch.tv"
+  login: "anthonykgross"
+  pass: ""
