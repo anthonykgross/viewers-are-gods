@@ -14,7 +14,7 @@ public class Bot extends Thread {
 	private String pass;
 	private String port;
 	private String channel;
-	private Service service = null;
+	private Service service = Service.getInstance();
 	
 	public Bot(String url, String login, String pass, String port, String channel) {
 		this.url 		= url;
@@ -22,12 +22,10 @@ public class Bot extends Thread {
 		this.port 		= port;
 		this.login 		= login;
 		this.pass 		= pass;
-		this.service    = Service.getInstance(null);
     }
 	
     
 	public void run(){
-		this.service.getLogger().info("Thread run");
 		//Configure what we want our bot to do
         Configuration configuration = new Configuration.Builder()
 		        		.setAutoNickChange(false) //Twitch doesn't support multiple users
@@ -43,6 +41,8 @@ public class Bot extends Thread {
 
         //Create our bot with the configuration
         PircBotX bot = new PircBotX(configuration);
+        this.service.setBot(bot);
+        
         //Connect to the server
         try {
 			bot.startBot();
