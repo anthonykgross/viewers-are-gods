@@ -1,10 +1,23 @@
+## Requierements
+Docker 1.12
+Craftbukkit 1.10.2
+SpigotMc 1.10.2
+
 ## Installation
+Need to install docker https://www.docker.com/
+
+Linux - In terminal 
+```
+sh create-images.sh
+docker run -v $PWD/src:/src -ti viewers-are-gods:master run
+```
+Get your plugin compiled in src/target/anthonykgross-0.0.1-SNAPSHOT.jar
 
 ## Configuration 
 src/src/main/resources/config.yml
 ```
 irc:
-  channel: "#anthonykgross" # chqnge with your channel name
+  channel: "#anthonykgross" # change with your channel name
   port: 6667
   url: "irc.twitch.tv"
   login: "anthonykgross" # your login to connect to IRC
@@ -17,6 +30,7 @@ config:
   message_caution: "%entity% (%percent%%)"
   player_to_focus: "anthonykgross" # Player to focus which will get the monster
 ```
+Need to compile and update your server with the new plugin compiled
 
 ## Creator
 **Anthony K GROSS**
