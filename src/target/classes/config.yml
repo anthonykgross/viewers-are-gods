@@ -3,11 +3,11 @@ irc:
   port: 6667
   url: "irc.twitch.tv"
   login: "anthonykgross"
-  pass: ""
+  pass: "oauth:nnv4301bkt1e3375la7rd02wp8gbab"
 
 config:
   nb_polls_to_summon: 5
   show_caution_at_percent: 50
   message_summon: "Pokemon go! %entity% attacks !"
   message_caution: "%entity% (%percent%%)"
-  player_to_focus: "kkuet12"
+  player_to_focus: "anthonykgross"

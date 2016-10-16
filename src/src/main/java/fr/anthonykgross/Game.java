@@ -12,7 +12,6 @@ import org.bukkit.entity.Player;
 import org.pircbotx.hooks.events.MessageEvent;
 
 import fr.anthonykgross.event.EventInterface;
-import net.md_5.bungee.api.ChatColor;
 
 public class Game implements EventInterface{
 
@@ -115,10 +114,10 @@ public class Game implements EventInterface{
         		Double percent 					= (e.getValue()/nb_polls_to_summon*100);
         		
 	        	if(percent >= show_caution_at_percent){
-	        		Bukkit.broadcastMessage(ChatColor.GOLD+message_caution.replace("%entity%", e.getKey()).replace("%percent%", String.valueOf(percent)));
+	        		Bukkit.broadcastMessage(message_caution.replace("%entity%", e.getKey()).replace("%percent%", String.valueOf(percent)));
 	        	}
 	        	if(e.getValue() >= nb_polls_to_summon){
-	        		Bukkit.broadcastMessage(ChatColor.RED+message_summon.replace("%entity%", e.getKey()));
+	        		Bukkit.broadcastMessage(message_summon.replace("%entity%", e.getKey()));
 	        		reset = true;
 	        		try{
 	        			this.addEntity(EntityType.valueOf(e.getKey().toUpperCase()));

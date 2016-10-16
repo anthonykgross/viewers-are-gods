@@ -1,8 +1,18 @@
 #!/bin/bash
 set -e
 
-cd /src
-mvn install
-mvn compile
-
-echo "Compilation terminee"
+run() {
+    cd /src
+    mvn install
+    mvn compile
+}
+case "$1" in
+"run")
+    echo "Run"
+    run
+    ;;
+*)
+    echo "Custom command : $@"
+    exec "$@"
+    ;;
+esac
